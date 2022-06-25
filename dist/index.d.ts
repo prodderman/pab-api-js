@@ -34,7 +34,7 @@ export declare class Pab<ContractType extends AnyHaskellADT, Endpoints extends R
      * @param {string} walletId - Wallet Id.
      * @return {Promise<string>} - Promise fulfilled by the activated contract instance id.
      */
-    activateContract: (contractName: string, walletId: string) => Promise<string>;
+    activateContract: (contractName: string, walletId: string, contents?: unknown) => Promise<string>;
     /**
      * Get the contract instance's status.
      * @param {string} contractInstanceId - Contract instance id.
