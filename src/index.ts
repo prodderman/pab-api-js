@@ -52,12 +52,16 @@ export class Pab<
    * @param {string} walletId - Wallet Id.
    * @return {Promise<string>} - Promise fulfilled by the activated contract instance id.
    */
-  activateContract = (contractName: string, walletId: string): Promise<string> =>
+  activateContract = (
+    contractName: string,
+    walletId: string,
+    contents?: unknown
+  ): Promise<string> =>
     this.axios
       .post(
         'api/contract/activate',
         {
-          caID: { tag: contractName },
+          caID: { tag: contractName, contents },
           caWallet: { getWalletId: walletId },
         },
         { headers: { 'Content-Type': 'application/json' } }
